@@ -41,10 +41,10 @@ public class RestRouter extends RouteBuilder {
             // Produce a message to the broker
             from("direct:create-order")
                 .log("sending ${body.item} to JMS queue")
-                .to("activemq:queue:orders");
+                .to("jms:queue:orders");
 
             // Consume from the message broker queue
-            from("activemq:queue:orders")
+            from("jms:queue:orders")
                 .log("received ${body.item} from JMS queue")
                 .to(this.insertOrder)
                 .to("mock:notify-by-email");
