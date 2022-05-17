@@ -118,11 +118,6 @@
 			<artifactId>hsqldb</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- OCP -->
-		<dependency>
-			<groupId>io.fabric8</groupId>
-			<artifactId>openshift-client</artifactId>
-		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -207,7 +202,7 @@
 				<plugins>
 					<plugin>
 						<groupId>org.jboss.redhat-fuse</groupId>
-						<artifactId>fabric8-maven-plugin</artifactId>
+						<artifactId>openshift-maven-plugin</artifactId>
 						<version>${fuse.bom.version}</version>
 						<executions>
 							<execution>
